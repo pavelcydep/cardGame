@@ -27,7 +27,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'image/clubs/[name].[ext]',
+              name: 'image/[name].[ext]',
               publicPath: '../',
               esModule: false,
             },
@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./image/clubs/[name].[ext]&publicPath=../',
+        loader: 'file-loader?name=./image/[name].[ext]&publicPath=../',
       },
     ]
   },
