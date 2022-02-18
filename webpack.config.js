@@ -20,7 +20,43 @@ module.exports = {
       {
         test: /\.css$/,
         use:  [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] // добавили минификацию CSS
-      }
+      },
+      {
+        test: /\.(png|jpg|gif|ico|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'image/clubs/[name].[ext]',
+              publicPath: '../',
+              esModule: false,
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=./image/clubs/[name].[ext]&publicPath=../',
+      },
     ]
   },
   plugins: [

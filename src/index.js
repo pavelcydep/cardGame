@@ -1,4 +1,5 @@
 import './index.css';
+
 import {
    images,
    cardImage
@@ -32,7 +33,7 @@ for (const user of shuffle(cardImage)) {
          x: 800,
 
          rotationY: "180deg"
-
+                                    
       })
       imgSpides.setAttribute('style', `background-image:url('${user.imageLinkSpides}')`);
    }
