@@ -40,4 +40,4 @@
 
 Стек технологий
 ===============
-HTML,CSS, JS,GSAP
+HTML,CSS, JS,GSAP, WEBPACK
